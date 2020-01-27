@@ -42,17 +42,6 @@
                 "route": "/{level1}/{level2}/{level3}/{level4}/{*level5}"
             },
             "backendUri": "http://127.0.0.1:8080/{level1}/{level2}/{level3}/{level4}/{level5}"
-        },
-        "echo": {
-            "matchCondition": {
-                "methods": [ "GET", "POST" ],
-                "route": "/port"
-            },
-            "responseOverrides": {
-                "response.statusCode": "200",
-                "response.body": "%HTTP_PLATFORM_PORT%"
-            }
-            
         }
     }
 }
