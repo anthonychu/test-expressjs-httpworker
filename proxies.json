@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "proxy0": {
+            "matchCondition": {
+                "methods": [ "GET", "POST" ],
+                "route": "/"
+            },
+            "backendUri": "http://127.0.0.1:8080/"
+        },
+        "proxy1": {
+            "matchCondition": {
+                "methods": [ "GET", "POST" ],
+                "route": "/{level1}"
+            },
+            "backendUri": "http://127.0.0.1:8080/{level1}"
+        },
+        "proxy2": {
+            "matchCondition": {
+                "methods": [ "GET", "POST" ],
+                "route": "/{level1}/{level2}"
+            },
+            "backendUri": "http://127.0.0.1:8080/{level1}/{level2}"
+        },
+        "proxy3": {
+            "matchCondition": {
+                "methods": [ "GET", "POST" ],
+                "route": "/{level1}/{level2}/{level3}"
+            },
+            "backendUri": "http://127.0.0.1:8080/{level1}/{level2}/{level3}"
+        },
+        "proxy4": {
+            "matchCondition": {
+                "methods": [ "GET", "POST" ],
+                "route": "/{level1}/{level2}/{level3}/{level4}"
+            },
+            "backendUri": "http://127.0.0.1:8080/{level1}/{level2}/{level3}/{level4}"
+        },
+        "proxy5": {
+            "matchCondition": {
+                "methods": [ "GET", "POST" ],
+                "route": "/{level1}/{level2}/{level3}/{level4}/{*level5}"
+            },
+            "backendUri": "http://127.0.0.1:8080/{level1}/{level2}/{level3}/{level4}/{level5}"
+        },
+        "echo": {
+            "matchCondition": {
+                "methods": [ "GET", "POST" ],
+                "route": "/port"
+            },
+            "responseOverrides": {
+                "response.statusCode": "200",
+                "response.body": "%HTTP_PLATFORM_PORT%"
+            }
+            
+        }
+    }
+}
